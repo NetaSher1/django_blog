@@ -1,0 +1,54 @@
+{% extends 'base_layout.html' %}
+{% block content %}
+    <h1 class="title">{{spot.title}}</h1>
+<div class="detail">
+    <p class="spot-detail">{{spot.body}}</p>
+    <img class="detail-img" src="{{spot.thumb.url}}" width="600px">
+</div>
+
+<div class="media">
+    <iframe width="600" height="400"
+        src="https://www.youtube.com/embed/{{spot.youtube_id}}">
+    </iframe>
+
+    <!-- This code is issued by Magicseaweed.com under license 1677938371_42876 for the website  only subject to terms and conditions
+    and this message being kept intact as part of the code. If you are not the license holder add this content to your website by registering at
+    Magicseaweed.com. All copyrights retained by Wavetrak Limited and any attempt to modify or redistribute this code is prohibited.
+    Please contact us for more information if required. -->
+    <div style="width:400px;background:#fff">
+        <script type="text/javascript" src="http://magicseaweed.com/syndicate/index.php?licenseKey=1677938371_42876"></script>
+        <p>
+            <div style="font-family:Arial, Helvetica, sans-serif;text-align:center;font-size:10px;color:#000;height:25px;">
+                <a href="http://magicseaweed.com/Ericeira-Surf-Report/198/" style="color:#000;">
+                    Ericeira Surf Report and Forecast
+                </a>
+            </div>
+        </p>
+    </div>
+</div>
+
+<br><br>
+
+<hr>
+<div class="comments">
+<h2>Comments...</h2>
+
+{% if not spot.comments.all %}
+    No comments yet...<a href="{% url 'spots:add_comment' slug=spot.slug %}"><button class="nav-btns">Add Comment</button></a>
+{% else %}
+    <a href="{% url 'spots:add_comment' slug=spot.slug %}"><button class="nav-btns">Add Comment</button></a>
+    <br><br>
+    {% for comment in spot.comments.all %}
+    <strong>
+    {{comment.name}}:
+    </strong>
+    <br>
+    {{comment.body}}
+    <br><br>
+    {{comment.date_added}}
+    <hr>
+    {% endfor %}
+{% endif %}
+</div>
+
+  {% endblock %}

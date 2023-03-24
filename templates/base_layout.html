@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <title>Surf Spots</title>
+
+</head>
+<body>
+
+<div class="wrapper">
+    <a href="{% url 'spots:spot'%}"><img class="urchin" src="{% static 'urchin2.jfif' %}"></a>
+    <a class="home-btn" href="{% url 'spots:spot'%}"><button class="nav-btns">Home</button></a>
+    <nav class="user-nav">
+        {% if user.is_authenticated%}
+        <p>Hello, {{user}}</p>
+            <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
+                {% csrf_token %}
+                <button class="nav-btns" type="submit">Logout</button>
+            </form>
+        {% else %}
+        <p>Not Registered?</p>
+        <a href="{% url 'accounts:login' %}"><button class="nav-btns">Login</button></a></li>
+        <a href="{% url 'accounts:signup' %}"><button class="nav-btns">Signup</button></a></li>
+        {% endif %}
+    </nav>
+  {% block content %}
+
+  {% endblock %}
+</div>
+</body>
+</html>
+

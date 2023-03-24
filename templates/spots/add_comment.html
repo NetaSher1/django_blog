@@ -1,0 +1,15 @@
+{% extends 'base_layout.html' %}
+{% block content %}
+{% if user.is_authenticated %}
+<h1>Add Comment</h1>
+
+<form action="{% url 'spots:add_comment' slug=spot.slug%}" method="post">
+    {% csrf_token%}
+    {{form}}
+    <input class="nav-btns" type="submit" value="Create">
+</form>
+
+{% else %}
+<h1>You Cannot Comment if Not Registered Or Logged In</h1>
+{% endif %}
+{% endblock %}

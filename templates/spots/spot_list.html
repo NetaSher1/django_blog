@@ -1,0 +1,37 @@
+{% extends 'base_layout.html' %}
+{% block content%}
+<h1 class="title">Ericeira Surf Spots</h1>
+
+<p class="waver">Make sure you are aware of your own surf level before using this surf spot selector. Don’t go to surf spots that exceed your level of surfing!
+    If you have never surfed before, you should take surf lessons, at least until you are able to control your board in the line-up. This will save you a lot of frustration and get you started the good way.
+    And before paddling out to the line-up, get to know the <a class="etiquette" href="https://www.ericeirasurfhouse.com/surf-rules/" target="_blank" >surf etiquette</a>.<br><br/>
+
+Since surfing is getting extremely popular, line-ups are getting more crowded and dangerous.
+    As tourist, make sure you respect the locals at any time. Don’t go straight to the peak if you just entered the water.
+    Start on the shoulder and work your way up if the locals allow you. Surf spots that have a high rating for localism, should be taken extra care of.
+    Sometimes it’s better to watch from the side-line when the locals are ripping.
+</p><br>
+
+<p class="separate">&#160;Spot selector</p><br>
+
+<form method="get" >
+    {{ form.form }}
+    <input type="submit" value="Filter Spots">
+</form><br>
+
+{% for spot in surf_spots %}
+<div class="spot-preview">
+    <h3><a class="spot-name"  href="{% url 'spots:detail' slug=spot.slug %}">{{spot.title}}</a></h3>
+    <img class="spot-img" src="{{spot.thumb.url}}">
+    <div class="bullet">
+    <p>Break Type: {{spot.break_type}}</p>
+    <p>Level: {{spot.get_level_display}}</p>
+    <p>Best Tide: {{spot.best_tide}}</p>
+    <p>Sea Bed: {{spot.sea_bed}}</p>
+    </div>
+    <button class="detail_btn" onclick="window.location.href='{% url 'spots:detail' slug=spot.slug %}'">More Details</button>
+</div>
+
+{% endfor %}
+{% endblock %}
+

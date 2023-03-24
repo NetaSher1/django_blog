@@ -1,0 +1,157 @@
+body{
+    background-color: #f9f5ff;
+}
+
+.urchin{
+    border-size: 3px;
+    border-radius: 80px;
+    border: 4px solid #ddf4fc;
+    width: 160px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.home-btn{
+    position: relative;
+    top: -38px;
+    left: 10px;
+
+}
+
+.nav-btns{
+    border-radius: 80px;
+    border: none;
+    background-color: #ddf4fc;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 8px;
+    padding-right: 8px;
+    font-weight: 550;
+}
+
+.nav-btns:hover{
+    background-color: #E9FFFF;
+    font-weight: bold;
+}
+
+.nav-btns:active{
+    opacity: 0.8;
+}
+
+
+.waver{
+    font-family: Georgia;
+    font-size: 18px;
+    text-align: center;
+}
+
+.title{
+    font-family: bradley hand,cursive;
+    font-size: 50px;
+    font-weight: 700;
+    text-align: center;
+}
+.spot-preview{
+    display: inline-block;
+    margin-right: 15px;
+    padding-left: 50px;
+    padding-bottom: 30px;
+}
+
+.spot-img{
+     width: 300px;
+     display: block;
+     border-radius: 30px;
+     padding: 3px;
+
+}
+
+.spot-name{
+    text-decoration: none;
+    color: black;
+}
+
+.spot-name:hover{
+    text-decoration: underline;
+}
+
+.bullet{
+    font-weight: bold;
+}
+.detail_btn{
+    border-radius: 3px;
+    border: none;
+    background-color: #ddf4fc;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.detail_btn:hover{
+    background-color: #E9FFFF;
+    font-weight: bold;
+}
+
+.detail_btn:active{
+    opacity: 0.8;
+}
+
+.spot-detail{
+    display: inline-block;
+    font-family: Georgia;
+    font-size: 18px;
+    width: 380px;
+    margin-top: 0px;
+
+
+}
+
+.detail-img{
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 15px;
+
+}
+
+.detail{
+   align-items: center;
+   padding-bottom: 30px;
+   padding-left: 300px;
+
+}
+
+.separate{
+    background-color: #ddf4fc;
+    text-align: center;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    font-family: bradley hand,cursive;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.user-nav{
+    position: absolute;
+    top: 0px;
+    right: 7px;
+}
+
+.media{
+   display: flex;
+  align-items: top;
+  margin-left: 300px;
+  margin-right: auto;
+}
+
+.comments{
+    display: block;
+    border-style: double;
+    border-size: 2px;
+    padding-left: 6px;
+    padding-right: 6px;
+    height: 800px;
+    width: 300px;
+    overflow: auto;
+}
+
+.etiquette{
+    color: #830ACD;
+}
